@@ -266,12 +266,12 @@ function validate() {
             from_mobile: phone.val(),
             message: desc.val(),
         }).then(function (res) {
-            if(res == 200){
+            if(res.status == 200){
                 show_msg("Thank You For Your Response.");
                 name.clear();
             }
             else{
-                show_msg("There is an Error!! Try Again." + res);
+                show_msg("There is an Error!! Try Again." + res.status);
             }
         });
     }
