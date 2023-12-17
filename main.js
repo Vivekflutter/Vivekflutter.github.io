@@ -275,6 +275,10 @@ function validate() {
             if(res.status == 200){
                 show_msg("Thank You For Your Response.");
                 $("#contact-form")[0].reset();
+                name.blur();
+                email.blur();
+                phone.blur();
+                desc.blur();
             }
             else{
                 show_msg("There is an Error!! Try Again.");
