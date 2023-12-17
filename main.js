@@ -243,12 +243,18 @@ function validate() {
     var phone = $('#phoneno');
     var desc = $('#desc');
 
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
     if(name.val() == ""){
         show_msg("Please Enter Your Name ");
         name.focus();
     }
     else if(email.val() == ''){
         show_msg("Please Enter Your E-Mail ");
+        email.focus();
+    }
+    else if(!email.val().match(validRegex)){
+        show_msg("Please Enter Valid E-Mail ");
         email.focus();
     }
     else if(phone.val() == ''){
@@ -268,10 +274,11 @@ function validate() {
         }).then(function (res) {
             if(res.status == 200){
                 show_msg("Thank You For Your Response.");
-                name.clear();
+                $("#contact-form").reset();
             }
             else{
-                show_msg("There is an Error!! Try Again." + res.status);
+                show_msg("There is an Error!! Try Again.");
+                console.log("Error: " + res.status);
             }
         });
     }
