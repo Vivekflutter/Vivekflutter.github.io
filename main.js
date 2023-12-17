@@ -271,7 +271,7 @@ function validate() {
                 name.clear();
             }
             else{
-                show_msg("There is an Error!! Try Again.");
+                show_msg("There is an Error!! Try Again." + res);
             }
         });
     }
