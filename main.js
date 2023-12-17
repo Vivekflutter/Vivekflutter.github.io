@@ -274,7 +274,7 @@ function validate() {
         }).then(function (res) {
             if(res.status == 200){
                 show_msg("Thank You For Your Response.");
-                $("#contact-form").reset();
+                $("#contact-form")[0].reset();
             }
             else{
                 show_msg("There is an Error!! Try Again.");
