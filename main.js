@@ -260,7 +260,8 @@ function validate() {
         desc.focus();
     }
     else{
-        show_msg("Thank You For Your Response")
+        show_msg("Thank You For Your Response.")
+        name.clear();
     }
 }
 
